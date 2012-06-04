@@ -1,0 +1,29 @@
+Space to practice/get started with some TDD
+
+Starting To Do
+Peer reviewer takes a number of members of a peer reviewed situation, gets them to rate one another 
+and then returns each users individual rank when given a group rank.
+
+Add members of the peer review
+	Add a member (Peer) class
+		Add method.		
+	Have a list of members for a peer review
+	
+	
+Members can rate every other member of group
+	Peers can be identified
+		When adding give each peer a unique ID
+		ID cannot be changed once set
+		
+	Ratings made and saved
+		Ratings table that stores ratings
+		
+	Ratings can be made once only
+	
+	
+Mark given to and saved by peer reviewer
+Mark boundaries (max and min) given to peer reviewer
+
+Individual marks generated
+	Marks when evaluated together can be shown to equal no more than the group mark 
+	
