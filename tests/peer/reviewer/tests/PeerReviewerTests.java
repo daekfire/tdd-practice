@@ -144,4 +144,27 @@ public class PeerReviewerTests {
 		assertEquals("Test mark is the mark given 2", 50, test.getPeer(2).getMark());
 
 	}
+	
+	@Test
+	public void test3WaySplits3() {
+		test.add(new Peer());
+		test.add(new Peer());
+		test.add(new Peer());
+		test.addRating(0,1,3);		
+		test.addRating(0,2,4);
+		test.addRating(1,0,5);
+		test.addRating(1,2,5);
+		test.addRating(2,0,5);
+		test.addRating(2,1,2);	
+		test.setGroupMark(50);
+		test.setGroupMarkBoundaries(0,100);
+		test.setMarkVariance(10);
+		test.assignMarks();
+		assertEquals("Test average marks = group mark", 50, 
+				((test.getPeer(0).getMark() + test.getPeer(1).getMark() + test.getPeer(2).getMark()) / 3));
+		assertEquals("Test mark is the mark given 0", 60, test.getPeer(0).getMark());
+		assertEquals("Test mark is the mark given 1", 35, test.getPeer(1).getMark());
+		assertEquals("Test mark is the mark given 2", 55, test.getPeer(2).getMark());
+
+	}
 }

@@ -73,7 +73,7 @@ public class PeerReviewer {
 		double baseline = calculateAverages();
 		for(Peer p : Peers) {
 			double diff = p.getAverage() - baseline;
-			double workingMark = GroupMark + (MarkVariance * diff);
+			double workingMark = GroupMark + (MarkVariance * diff);			
 			p.setMark((int)workingMark);
 		}
 			
@@ -101,10 +101,10 @@ public class PeerReviewer {
 				if(temp.getRatee() == i) 
 					tempList.add(temp.getRating());				
 			}
-			int total = 0;
+			double total = 0;
 			for(Integer num : tempList) 
 				total += num;
-			double average = total / tempList.size();
+			double average = total / tempList.size();			
 			Peers.get(i).setAverage(average);
 			averageList.add(average);
 		}
